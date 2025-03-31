@@ -108,6 +108,11 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
 
+    <script
+      nonce="random123"
+      src="https://trusted.example.com/trusted_script.js"
+    ></script>
+
     <script defer src="js/script.js"></script>
 
     <title>Omnifood &mdash; Never cook</title>
@@ -180,8 +185,8 @@
           </div>
           <div class="hero-img-box">
             <picture>
-              <source src="img/hero.webp" type="img/webp" />
-              <source src="img/hero-2.png" type="img/webp" />
+              <source srcset="img/hero.webp" type="img/webp" />
+              <source srcset="img/hero-2.png" type="img/webp" />
               <img
                 src="img/hero-2.png"
                 class="hero-img"
@@ -683,7 +688,7 @@
                 eating well today. You can cancel or pause anytime. And the
                 first meal is on us!
               </p>
-              <form class="cta-form" action="#">
+              <form class="cta-form" name="sign-up" netlify>
                 <div>
                   <label for="fullname"> Full Name </label>
                   <input
@@ -691,6 +696,7 @@
                     placeholder="Your Name"
                     id="fullname"
                     required
+                    name="full-name"
                   />
                 </div>
 
@@ -701,6 +707,7 @@
                     type="email"
                     placeholder="me@example.com"
                     required
+                    name="email"
                   />
                 </div>
 
@@ -708,7 +715,7 @@
                   <label for="select-where">
                     Where did you hear about us?
                   </label>
-                  <select id="select-where" required>
+                  <select id="select-where" required name="select-where">
                     <option value="">Please choose one option</option>
                     <option value="friends">Friends and family</option>
                     <option value="youtube">YouTube video</option>
@@ -718,7 +725,9 @@
                   </select>
                 </div>
 
-                <button class="btn btn--form" action="#">Sign up now</button>
+                <button class="btn btn--form" role="none" action="#">
+                  Sign up now
+                </button>
               </form>
             </div>
             <div
